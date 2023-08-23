@@ -26,3 +26,12 @@ The L-BFGS is an algorithm used to minimize the error function without constrain
 L-BFGS is a computationally feasible and fast method in the fitting procedure of all vertices. It has been proven that having a lower iteration cost, makes the optimization more efficient while still giving favorable convergence. The second optimizer, TC, is generally used in pRF mapping due to its capability to compute more robust results, converging to a single solution regardless of the initialization parameter values.
 
 The choice of optimizer can influence the outcomes of the optimization process, prompting the need for occasional exploration to balance the time invested and the optimization quality achieved. Irrespective of the chosen optimizer for this phase, the fitting procedure empowers us to derive the best-suited parameters for measuring the population receptive field (pRF) in every vertex. This is the reason why the optimizers were analyzed in a cvR2 scheme with the results of Subject 001. The script **cv_paramcomputed.py** contains the functions and procedure used to obtain the cvR2, while the results were inspected in the **single-subject.ipynb** file.
+
+## Definition of ROIs (V1-V3)
+We were particularly interested in the early visual cortex which involves areas V1, V2, and V3, due to their retinotopic organization. This characteristic allows us to measure the effects of Memantine in feedback processing using a non-invasive technique, namely pRF analysis.
+
+Essentially, the organization of the early visual cortex reflects the arrangement of the visual input from the eyes, creating a map-like representation of space.
+This means that areas V1-V3 will follow a pattern that can be encoded using the estimated center location of each pRF in degrees of the visual field with respect to the fixation point, namely the polar coordinates and eccentricity.
+
+The fitting procedure to obtain the estimated Gaussian center position of each neural population (see Methods \ref{sec: paramoptimization}) was based on the median BOLD signal acquired during the placebo session.
+The procedure was performed across all vertices of the visual cortex, for each subject
