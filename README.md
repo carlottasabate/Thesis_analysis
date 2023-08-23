@@ -9,7 +9,7 @@ This process is computationally performed using the *prfpy* Python package \cite
 The first stage, also known as grid-fit, consists of finding the best-fitting initial parameters for each vertex (i.e. population of neurons). 
 The aim is to reduce the computational time during optimization by finding adequate initialization parameters. 
 
-The grid of values and boundaries set up to obtain accurate results are found in **prf_analysis.yml**. We set up a grid of 20 values for each parameter, precisely position and size ($x_0$, $y_0$, $\sigma_1$) for the Gaussian, and include the surrounding size ($\sigma_2$) and signal amplitude of the negative Gaussian ($\beta_2$) for the DoG. Additionally, some constraints are included in order to guarantee a good fitting procedure.
+The grid of values and boundaries set up to obtain accurate results are found in **prf_analysis.yml** and the design matrix of the experiment **design_task-2R.mat**. We set up a grid of 20 values for each parameter, precisely position and size ($x_0$, $y_0$, $\sigma_1$) for the Gaussian, and include the surrounding size ($\sigma_2$) and signal amplitude of the negative Gaussian ($\beta_2$) for the DoG. Additionally, some constraints are included in order to guarantee a good fitting procedure.
 The fits are restricted to positive pRFs for the Gaussian and for the positive linear Gaussian function of the DoG. Thus, boundaries for the pRF amplitude $\beta_1$ are defined from 0 to 100. 
 This means that if the estimated pRF amplitude is outside the range, the fitting will be discarded, ensuring that the boundaries are followed.
 
