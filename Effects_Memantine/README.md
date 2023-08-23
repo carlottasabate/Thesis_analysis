@@ -8,6 +8,8 @@ We used the full width at minimum (FWMIN) to measure the size of the inhibitory 
 We used the full-width at half maximum (FWHM) to describe the width (size) of the positive part of the receptive field. It specifically measures the width of a peak at half of its maximum value. 
 We statistically analyzed the differences between drugs for both metrics.
 
+The file **single-subject_analysis.ipynb** also contains the analysis of these metrics for Subject 001 results.
+
 ## Group analysis
 
 The differences between drug conditions were statistically analyzed across subjects (i.e.  Subjects 001, 005, 007, 008, 010 and 012) performing a group analysis. The script can be found **group_analysis_dog.ipynb**. Additionally the Gaussian model results were analyzed in **group_analysis_gauss**.
