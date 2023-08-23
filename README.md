@@ -30,8 +30,15 @@ The choice of optimizer can influence the outcomes of the optimization process, 
 ## Definition of ROIs (V1-V3)
 We were particularly interested in the early visual cortex which involves areas V1, V2, and V3, due to their retinotopic organization. This characteristic allows us to measure the effects of Memantine in feedback processing using a non-invasive technique, namely pRF analysis.
 
-Essentially, the organization of the early visual cortex reflects the arrangement of the visual input from the eyes, creating a map-like representation of space.
-This means that areas V1-V3 will follow a pattern that can be encoded using the estimated center location of each pRF in degrees of the visual field with respect to the fixation point, namely the polar coordinates and eccentricity.
+Essentially, the organization of the early visual cortex reflects the arrangement of the visual input from the eyes, creating a map-like representation of space. This means that areas V1-V3 will follow a pattern that can be encoded using the estimated center location of each pRF in degrees of the visual field with respect to the fixation point, namely the polar coordinates and eccentricity. We used the Gaussian model to measure the pRF center positions for the placebo session. 
+The fitting procedure to obtain the estimated Gaussian center position of each neural population was based on the median BOLD signal acquired during the placebo session. The procedure was performed across all vertices of the visual cortex, for each subject. The script **rois_definition_subject.ipynb** contains the information used to defined the ROIs of each subject.
 
-The fitting procedure to obtain the estimated Gaussian center position of each neural population (see Methods \ref{sec: paramoptimization}) was based on the median BOLD signal acquired during the placebo session.
-The procedure was performed across all vertices of the visual cortex, for each subject
+Visual regions were delineated manually with the software Freesurfer by displaying pseudocolor-coded maps of polar angle and eccentricity values %, calculated from the pRF analysis, 
+in the inflated surface of the participant. The surface inflation is used to better visualize the retinotopy and functional architecture of the cortical 'sheet' (i.e. its natural structure is to be wrinkled).
+By combining the radial and angular maps, we can see the separate regions of the visual cortex following  the standard criteria.
+
+## Effects of Memantine
+
+After defining the ROIs and setting the best optimizer to fit the parameters for the DoG model, we fitted the DoG model using the TC optimizer for each population of neurons belonging to areas V1, V2, V3 in both session results. We used the script **cv_paramscomputed.py**, setting the parameter cv to FALSE to fit the model and measure the neural responses. 
+
+The folder **Effects_Memantine** contains the analysis performed for the single subject and group analysis to compare the center-surround between sessions.
